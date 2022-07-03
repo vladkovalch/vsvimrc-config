@@ -5,10 +5,10 @@
 &nbsp; &nbsp; Here's a compilation of my personal preferences using Visual Studio's VsVim plugin, mainly focused on .NET development using ReSharper.
 
 ```vim
-set ignorecase                   " Allows case insensetive search
+set ignorecase                   " Allows case insensitive search
 set clipboard=unnamed            " Sets system synchronized clipboard register
 set number                       " Activates the line numbering
-set relativenumber               " Sets relative line numbers. Along with 'number' being set produces hybrid line number mode
+set relativenumber               " Sets relative line numbers. Along with 'number' being set produces a hybrid line number mode
 set smartcase                    " Case insensitive search unless the search pattern contains an uppercase character
 set cursorline                   " Highlights the current line
 
@@ -18,7 +18,7 @@ set vsvim_hidemarks=<>[]^.'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 " Disables recording feature
 map q <NOP>
 
-" Unbinds the Space key (as it used as a modificator in other mappings)
+" Unbinds the Space key (as it's used as a modificator in other mappings)
 map <Space> <NOP>
 
 " Space + w(indow) + p(in) - Toggles document's pin status
