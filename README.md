@@ -45,12 +45,8 @@ noremap <C-Space> :vsc Edit.CompleteWord<CR>
 noremap <Space>ki :vsc Edit.QuickInfo<CR>
 noremap <Space>kp :vsc Edit.ParameterInfo<CR>
 
-" Space + m(ark) - Navigates forwards through all issues detected in the current document 
-" Space + M(ark) - Navigates backwards through all issues detected in the current document 
 " Space + m(ark) + t(oggle) - Toggles bookmarks
 " Space + m(arks) + a(ll) - Shows bookmarks list
-noremap <Space>m :vsc Edit.NextBookmarkInDocument<CR>
-noremap <Space>M :vsc Edit.PreviousBookmarkInDocument<CR>
 noremap <Space>mt :vsc Edit.ToggleBookmark<CR>
 noremap <Space>ma :vsc View.BookmarkWindow<CR>
 
@@ -132,12 +128,12 @@ noremap <Space>tsc :vsc ReSharper.ReSharper_ShowCoverageResultsBrowser<CR>
 " noremap <Space>tss :vsc TestExplorer.ShowTestExplorer<CR>
 " noremap <Space>tsc :vsc View.CodeCoverageResults<CR>
 
-" Space + b(reakpoint) - Toggles breakpoint 
+" Space + b(reakpoint) + t(oggle) - Toggles breakpoint 
 " Space + b(reakpoints) + d(elete) - Disables all breakpoins
 " Space + b(reakpoints) + e(nable) - Enables all breakpoints
 " Space + b(reakpoints) + r(emove) - Removes all breakpoints
 " Space + b(reakpoints) + a(ll) - Shows breakpoints list
-noremap <Space>b :vsc Debug.ToggleBreakpoint<CR>
+noremap <Space>bt :vsc Debug.ToggleBreakpoint<CR>
 noremap <Space>bd :vsc Debug.DisableAllBreakpoints<CR>
 noremap <Space>be :vsc Debug.EnableAllBreakpoints<CR>
 noremap <Space>br :vsc Debug.DeleteAllBreakpoints<CR>
