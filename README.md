@@ -166,10 +166,10 @@ noremap <Space>sdc :vsc Debug.StopDebugging<CR>
 " Ctrl + Down - Steps into
 " Ctrl + Up - Steps out
 nnoremap <Space>qw :vsc Debug.QuickWatch<CR>
-nnoremap <silent> <C-Left> :vsc Debug.SetNextStatement<CR>
-nnoremap <silent> <C-Right> :vsc Debug.StepOver<CR>
-nnoremap <silent> <C-Down> :vsc Debug.StepInto<CR>
-nnoremap <silent> <C-Up> :vsc Debug.StepOut<CR>
+nnoremap <C-Left> :vsc Debug.SetNextStatement<CR>
+nnoremap <C-Right> :vsc Debug.StepOver<CR>
+nnoremap <C-Down> :vsc Debug.StepInto<CR>
+nnoremap <C-Up> :vsc Debug.StepOut<CR>
 
 " Space + r(emove) + s(ort) - Removes and sorts usings
 noremap <Space>rs :vsc Edit.RemoveAndSort<CR>
