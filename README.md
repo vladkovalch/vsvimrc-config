@@ -5,10 +5,10 @@
 &nbsp; &nbsp; Here's a compilation of my personal preferences using Visual Studio's VsVim plugin, mainly focused on .NET development using ReSharper.
 
 ```vim
-set ignorecase                   " Allows case insensitive search
+set ignorecase                   " Allows case insensetive search
 set clipboard=unnamed            " Sets system synchronized clipboard register
 set number                       " Activates the line numbering
-set relativenumber               " Sets relative line numbers. Along with 'number' being set produces a hybrid line number mode
+set relativenumber               " Sets relative line numbers. Along with 'number' being set produces hybrid line number mode
 set smartcase                    " Case insensitive search unless the search pattern contains an uppercase character
 set cursorline                   " Highlights the current line
 
@@ -18,13 +18,13 @@ set vsvim_hidemarks=<>[]^.'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 " Disables recording feature
 map q <NOP>
 
-" Unbinds the Space key (as it's used as a modificator in other mappings)
+" Unbinds the Space key (as it used as a modificator in other mappings)
 map <Space> <NOP>
 
 " Space + w(indow) + p(in) - Toggles document's pin status
-" Space + w(indow) + c(lose) + a(ll) - Closes all unpinned documents
-noremap <Space>wp :vsc Window.PinTab<CR>
-noremap <Space>wca :vsc Window.CloseAllButPinned<CR>
+" Space + w(indows) + c(lose) + a(ll) - Closes all unpinned documents
+noremap <Space>wp :vsc Window.PinTab<CR> 
+noremap <Space>wc :vsc Window.CloseAllButPinned<CR> 
 
 " Alt + j - Navigates to the next tab
 " Alt + k - Navigates to the previous tab
@@ -45,10 +45,14 @@ noremap <C-Space> :vsc Edit.CompleteWord<CR>
 noremap <Space>ki :vsc Edit.QuickInfo<CR>
 noremap <Space>kp :vsc Edit.ParameterInfo<CR>
 
-" Space + m(ark) - Toggles bookmarks
-" Space + m(arks) + l(ist) - Shows bookmarks list
-noremap <Space>m :vsc Edit.ToggleBookmark<CR>
-noremap <Space>ml :vsc Edit.BookmarkWindow<CR>
+" Space + m(ark) - Navigates forwards through all issues detected in the current document 
+" Space + M(ark) - Navigates backwards through all issues detected in the current document 
+" Space + m(ark) + t(oggle) - Toggles bookmarks
+" Space + m(arks) + a(ll) - Shows bookmarks list
+noremap <Space>m :vsc Edit.NextBookmarkInDocument<CR>
+noremap <Space>M :vsc Edit.PreviousBookmarkInDocument<CR>
+noremap <Space>mt :vsc Edit.ToggleBookmark<CR>
+noremap <Space>ma :vsc View.BookmarkWindow<CR>
 
 " ] - Navigates to the next member / type / tag
 " [ - Navigates to the previous member / type / tag
@@ -84,7 +88,7 @@ noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
 " noremap <Space>i :vsc Edit.GoToImplementation<CR>
 " noremap <Space>u :vsc Edit.FindAllReferences<CR>
 
-" Space + f(ind) + t(ype) - Helps you find and navigate to the generic type declaration as well as to declarations of all generic parameters
+" Space + f(ind) + t(ype) - Helps you find and navigate to the generic type declaration as well as to declarations of all generic parameters 
 " Space + f(ind) + m(ember) - Helps you find and navigate to a particular method, field, property in the current document
 " Space + f(ind) + e(xact) - Helps you find and navigate to any textual matches in your solution
 noremap <Space>ft :vsc ReSharper.ReSharper_GotoType<CR>
@@ -128,16 +132,16 @@ noremap <Space>tsc :vsc ReSharper.ReSharper_ShowCoverageResultsBrowser<CR>
 " noremap <Space>tss :vsc TestExplorer.ShowTestExplorer<CR>
 " noremap <Space>tsc :vsc View.CodeCoverageResults<CR>
 
-" Space + b(reakpoint) - Toggles breakpoint
+" Space + b(reakpoint) - Toggles breakpoint 
 " Space + b(reakpoints) + d(elete) - Disables all breakpoins
 " Space + b(reakpoints) + e(nable) - Enables all breakpoints
 " Space + b(reakpoints) + r(emove) - Removes all breakpoints
-" Space + b(reakpoints) + l(ist) - Shows breakpoints list
+" Space + b(reakpoints) + a(ll) - Shows breakpoints list
 noremap <Space>b :vsc Debug.ToggleBreakpoint<CR>
 noremap <Space>bd :vsc Debug.DisableAllBreakpoints<CR>
 noremap <Space>be :vsc Debug.EnableAllBreakpoints<CR>
 noremap <Space>br :vsc Debug.DeleteAllBreakpoints<CR>
-noremap <Space>bl :vsc Debug.Breakpoints<CR>
+noremap <Space>ba :vsc Debug.Breakpoints<CR>
 
 " Space + s(tart) + b(uild) - Builds solution
 " Space + s(tart) + c(lean) - Cleans solution
@@ -184,7 +188,7 @@ noremap <Space>, :s/\v\s*(,\s*)*$/,/<CR>
 noremap <Space>; :s/\v\s*(;\s*)*$/;/<CR>
 noremap <Space>x :s/.\{1}$//<CR>
 
-" Space + n(umber) + a(bsolute) - Sets absolute line numbers
+" Space + n(umber) + a(bsolute) - Sets absolute line numbers 
 " Space + n(umber) + r(elative) - Sets relative line numbers
 noremap <Space>na :set rnu!<CR>
 noremap <Space>nr :set rnu<CR>
