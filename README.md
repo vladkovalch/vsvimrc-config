@@ -31,6 +31,7 @@ noremap <Space>wc :vsc Window.CloseAllButPinned<CR>
 " You might want to change these if you're using horizontal layout
 noremap <A-j> :vsc Window.NextTab<CR>
 noremap <A-k> :vsc Window.PreviousTab<CR>
+noremap <C-T> :vsc Window.RestoreClosedTab<CR>
 
 " Alt + Enter - Shows action indicators and action list
 " Ctrl + Space - Provides a list of completions for the partial word typed by the user
