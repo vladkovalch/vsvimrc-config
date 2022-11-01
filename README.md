@@ -87,13 +87,13 @@ noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
 " Space + f(ind) + t(ype) - Helps you find and navigate to the generic type declaration as well as to declarations of all generic parameters 
 " Space + f(ind) + m(ember) - Helps you find and navigate to a particular method, field, property in the current document
 " Space + f(ind) + e(xact) - Helps you find and navigate to any textual matches in your solution
-noremap <Space>ft :vsc ReSharper.ReSharper_GotoType<CR>
+noremap <Space>ff :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <Space>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
-noremap <Space>fe :vsc ReSharper.ReSharper_GotoText<CR>
+noremap <Space>fw :vsc ReSharper.ReSharper_GotoText<CR>
 " ReSharper disabled:
-" noremap <Space>ft :vsc Edit.GoToType<CR>
+" noremap <Space>ff :vsc Edit.GoToType<CR>
 " noremap <Space>fm :vsc Edit.GoToMember<CR>
-" noremap <Space>fe :vsc Edit.GoToAll<CR>
+" noremap <Space>fw :vsc Edit.GoToAll<CR>
 
 " Space + e(rror) - Navigates forwards through all issues detected in the current file
 " Space + E(rror) - Navigates backwards through all issues detected in the current file
