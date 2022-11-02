@@ -50,7 +50,7 @@ noremap <Space>kp :vsc Edit.ParameterInfo<CR>
 
 " Space + m(ark) - Toggles bookmarks
 " Space + m(arks) + a(ll) - Shows bookmarks list
-noremap <Space>m :vsc Edit.ToggleBookmark<CR>
+noremap <Space>mm :vsc Edit.ToggleBookmark<CR>
 noremap <Space>ma :vsc View.BookmarkWindow<CR>
 
 " ] - Navigates to the next member / type / tag
@@ -136,7 +136,7 @@ noremap <Space>tsc :vsc ReSharper.ReSharper_ShowCoverageResultsBrowser<CR>
 " Space + b(reakpoints) + e(nable) - Enables all breakpoints
 " Space + b(reakpoints) + r(emove) - Removes all breakpoints
 " Space + b(reakpoints) + a(ll) - Shows breakpoints list
-noremap <Space>b :vsc Debug.ToggleBreakpoint<CR>
+noremap <Space>bb :vsc Debug.ToggleBreakpoint<CR>
 noremap <Space>bd :vsc Debug.DisableAllBreakpoints<CR>
 noremap <Space>be :vsc Debug.EnableAllBreakpoints<CR>
 noremap <Space>br :vsc Debug.DeleteAllBreakpoints<CR>
