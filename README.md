@@ -48,7 +48,7 @@ noremap <C-Space> :vsc Edit.CompleteWord<CR>
 noremap <Space>ki :vsc Edit.QuickInfo<CR>
 noremap <Space>kp :vsc Edit.ParameterInfo<CR>
 
-" Space + m(ark) + t(oggle) - Toggles bookmarks
+" Space + m(ark) - Toggles bookmarks
 " Space + m(arks) + a(ll) - Shows bookmarks list
 noremap <Space>mt :vsc Edit.ToggleBookmark<CR>
 noremap <Space>ma :vsc View.BookmarkWindow<CR>
@@ -87,9 +87,9 @@ noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
 " noremap <Space>i :vsc Edit.GoToImplementation<CR>
 " noremap <Space>u :vsc Edit.FindAllReferences<CR>
 
-" Space + f(ind) + t(ype) - Helps you find and navigate to the generic type declaration as well as to declarations of all generic parameters 
+" Space + f(ind) + f(iles) - Helps you find and navigate to the generic type declaration as well as to declarations of all generic parameters 
 " Space + f(ind) + m(ember) - Helps you find and navigate to a particular method, field, property in the current document
-" Space + f(ind) + e(xact) - Helps you find and navigate to any textual matches in your solution
+" Space + f(ind) + w(ord) - Helps you find and navigate to any textual matches in your solution
 noremap <Space>ff :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <Space>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
 noremap <Space>fw :vsc ReSharper.ReSharper_GotoText<CR>
@@ -131,8 +131,8 @@ noremap <Space>tsc :vsc ReSharper.ReSharper_ShowCoverageResultsBrowser<CR>
 " noremap <Space>tss :vsc TestExplorer.ShowTestExplorer<CR>
 " noremap <Space>tsc :vsc View.CodeCoverageResults<CR>
 
-" Space + b(reakpoint) + t(oggle) - Toggles breakpoint 
-" Space + b(reakpoints) + d(elete) - Disables all breakpoins
+" Space + b(reakpoint) - Toggles breakpoint 
+" Space + b(reakpoints) + d(isable) - Disables all breakpoins
 " Space + b(reakpoints) + e(nable) - Enables all breakpoints
 " Space + b(reakpoints) + r(emove) - Removes all breakpoints
 " Space + b(reakpoints) + a(ll) - Shows breakpoints list
