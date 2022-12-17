@@ -2,8 +2,6 @@
 
 <br/>
 
-&nbsp; &nbsp; Here's a compilation of my personal preferences using Visual Studio's VsVim plugin, mainly focused on .NET development using ReSharper.
-
 ```vim
 set ignorecase                   " Allows case insensetive search
 set clipboard=unnamed            " Sets system synchronized clipboard register
@@ -194,7 +192,3 @@ noremap <Space>nr :set rnu<CR>
 ```
 
 <br/>
-
-&nbsp; &nbsp; When composing this config file, I've been trying to come up with some abstract meanings behind the mappings so they could be more easily remembered. If you find some of them a bit off, feel free to adjust them to your taste. Also, I'm open to any suggestion on improving the config and bringing some new stuff in, so don't be shy to contact me.
-
-ℹ️ If you're seeking a more detailed explanation of settings, see: https://github.com/VsVim/VsVim/wiki/Settings-Reference
