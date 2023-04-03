@@ -27,8 +27,8 @@ noremap <A-z> :vsc Edit.ToggleWordWrap<CR>
 " `<leader> + ;` - Add a semicolumn to the end of the current line
 " `<leader> + x` - Delete the last character of the current line
 noremap <leader>. :A.<CR>
-noremap <leader>, :execute 's/\v\s*(,\s*)*$/,/' \| execute 'nohl'<CR>
-noremap <leader>; :s/\v\s*(;\s*)*$/;/<CR>
+noremap <leader>, :s/\v\s*(;\s*)*$/;/<CR>
+noremap <leader>; :s/\v\s*(,\s*)*$/,/<CR>
 noremap <leader>x :s/.\{1}$//<CR>
 
 " `<leader> + n(umber) + a(bsolute)` - Set absolute line numbers 
