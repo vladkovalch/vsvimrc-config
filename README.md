@@ -175,8 +175,8 @@ noremap <leader>ba :vsc Debug.Breakpoints<CR>
 " `<leader> + s(tart) + c(lean)` - Clean solution
 " `<leader> + s(tart) + b(uild)` + s(election) - Build the project that is currently selected
 " `<leader> + s(tart) + c(lean)` + s(election) - Clean the project that is currently selected
-" `<leader> + s(tart) + d(ebug)` - Start with gebugging
-" `<leader> + s(tart) + r(un)` - Run a program without gebugging
+" `<leader> + s(tart) + d(ebug)` - Start with debugging
+" `<leader> + s(tart) + r(un)` - Run a program without debugging
 " `<leader> + s(tarted) + b(uild) + c(ancel)` - Cancel building process
 " `<leader> + s(tarted) + d(ebug) + c(ancel)` - Stop debugging
 noremap <leader>sb :vsc Build.BuildSolution<CR>
