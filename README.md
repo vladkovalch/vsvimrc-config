@@ -4,16 +4,17 @@
 
 ```vim
 set clipboard=unnamed            " Sets system synchronized clipboard register
-set number                       " Activates the line numbering
-set relativenumber               " Sets relative line numbers. Along with `number` being set produces hybrid line number mode
-set cursorline                   " Highlight the current line
-set ignorecase                   " Allow case insensetive search
-set smartcase                    " Case insensitive search unless the search pattern contains an uppercase character
+set number                       " Enables line numbering
+set relativenumber               " Enables relative line numbering. Along with `number` being set, produces hybrid line number mode
+set cursorline                   " Highlights the current line
+set ignorecase                   " Enables case-insensitive search
+set smartcase                    " Enables smart case search, which is case-insensitive unless uppercase letters are used
+set hlsearch                     " Enables highlighting of all matches for the search pattern
 
 " Sets the leader key
 let mapleader="\<Space>"
 
-" Unibinds the Space key (as it used as a leader key)
+" Unbinds the Space key as it's used as the leader key
 nnoremap <Space> <NOP>
 
 " `Esc` - Remove search highlights
@@ -22,33 +23,33 @@ nnoremap <Esc> :nohl<CR>
 " `<Alt> + z` - Toggle word wrap
 noremap <A-z> :vsc Edit.ToggleWordWrap<CR>
 
-" `<leader> + .` - Add a dot to the end of the current line
-" `<leader> + ,` - Add a comma to the end of the current line
-" `<leader> + ;` - Add a semicolumn to the end of the current line
+" `<leader> + .` - Append a period to the end of the current line
+" `<leader> + ,` - Append a comma to the end of the current line
+" `<leader> + ;` - Append a semicolon to the end of the current line
 " `<leader> + x` - Delete the last character of the current line
-noremap <leader>. :A.<CR>
-noremap <leader>, :s/\v\s*(,\s*)*$/,/<CR>
-noremap <leader>; :s/\v\s*(;\s*)*$/;/<CR>
-noremap <leader>x :s/.\{1}$//<CR>
+noremap <leader>. :norm A.<CR>
+noremap <leader>, :s/\v\s*(,\s*)*$/,/<CR>:nohl<CR>
+noremap <leader>; :s/\v\s*(;\s*)*$/;/<CR>:nohl<CR>
+noremap <leader>x :s/.\{1}$//<CR>:nohl<CR>
 
-" `<leader> + n(umber) + a(bsolute)` - Set absolute line numbers 
+" `<leader> + n(umber) + a(bsolute)` - Set absolute line numbers
 " `<leader> + n(umber) + r(elative)` - Set relative line numbers
 noremap <leader>na :set rnu!<CR>
 noremap <leader>nr :set rnu<CR>
 
-" `<leader> + w(indow) + p(in)` - Toggle document's pin status
+" `<leader> + w(indow) + p(in)` - Toggle the pin status of the document
 " `<leader> + w(indows) + c(lose) + a(ll)` - Close all unpinned documents
-noremap <leader>wp :vsc Window.PinTab<CR> 
-noremap <leader>wca :vsc Window.CloseAllButPinned<CR> 
+noremap <leader>wp :vsc Window.PinTab<CR>
+noremap <leader>wca :vsc Window.CloseAllButPinned<CR>
 
-" `-` - Collapse current region
-" `=` - Expand current region
+" `-` - Collapse the current region
+" `=` - Expand the current region
 " `_` - Collapse all
 " `+` - Expand all
-noremap - :vsc Edit.CollapseCurrentRegion<CR> 
-noremap = :vsc Edit.ExpandCurrentRegion<CR> 
-noremap _ :vsc Edit.CollapsetoDefinitions<CR> 
-noremap + :vsc Edit.ExpandAllOutlining<CR> 
+noremap - :vsc Edit.CollapseCurrentRegion<CR>
+noremap = :vsc Edit.ExpandCurrentRegion<CR>
+noremap _ :vsc Edit.CollapsetoDefinitions<CR>
+noremap + :vsc Edit.ExpandAllOutlining<CR>
 
 " `<Alt> + j` - Navigate to the next tab
 " `<Alt> + k` - Navigate to the previous tab
@@ -59,31 +60,20 @@ noremap <A-k> :vsc Window.PreviousTab<CR>
 "noremap <A-h> :vsc Window.PreviousTab<CR>
 
 " `<Alt> + <Enter>` - Show action indicators and action list
-" `<Ctrl> + <Space>` - Provide a list of completions for the partial word typed by the user
+" `<Ctrl> + <Space>` - Provide a completion list for partially typed words
 noremap <A-CR> :vsc ReSharper_AltEnter<CR>
 noremap <C-Space> :vsc Edit.CompleteWord<CR>
 " ReSharper disabled:
 " noremap <A-CR> :vsc View.QuickActions<CR>
 " noremap <C-Space> :vsc Edit.CompleteWord<CR>
 
-" `<leader> + r(emove) + s(ort)` - Remove and sorts usings
+" `<leader> + r(emove) + s(ort)` - Remove and sort 'usings'
 noremap <leader>rs :vsc Edit.RemoveAndSort<CR>
 
-" `<leader> + (quic)k + i(nfo)` - Show quick info tool tip
-" `<leader> + (quic)k + p(arameter)` - Show parameter info tool tip
+" `<leader> + (quic)k + i(nfo)` - Show quick info tooltip
+" `<leader> + (quic)k + p(arameter)` - Show parameter info tooltip
 noremap <leader>ki :vsc Edit.QuickInfo<CR>
 noremap <leader>kp :vsc Edit.ParameterInfo<CR>
-
-" `m(ark)` - Navigate forwards through bookmarks
-" `M(ark)` - Navigate backwards through bookmarks
-" `<leader> + m + m(ark)` - Toggle bookmarks
-" `<leader> + m(arks) + r(emove)` - Remove all bookmarks
-" `<leader> + m(arks) + a(ll)` - Show bookmarks list
-noremap m :vsc Edit.NextBookmark<CR>
-noremap M :vsc Edit.PreviousBookmark<CR>
-noremap <leader>mm :vsc Edit.ToggleBookmark<CR>
-noremap <leader>mr :vsc Edit.ClearBookmarks<CR>
-noremap <leader>ma :vsc View.BookmarkWindow<CR>
 
 " `]` - Navigate to the next member / type / tag
 " `[` - Navigate to the previous member / type / tag
@@ -93,8 +83,8 @@ noremap [ :vsc ReSharper.ReSharper_GotoPrevMember<CR>
 " noremap ] :vsc Edit.NextMethod<CR>
 " noremap [ :vsc Edit.PreviousMethod<CR>
 
-" `<Ctrl> + -` - Move backwards through the navigation history
-" `<Ctrl> + =` - Move forwards through the navigation history
+" `<Ctrl> + -` - Move backward through navigation history
+" `<Ctrl> + =` - Move forward through navigation history
 noremap <C>- :vsc View.NavigateBackward<CR>
 noremap <C>= :vsc View.NavigateForward<CR>
 
@@ -105,9 +95,9 @@ nnoremap gj j
 nnoremap k gk
 nnoremap gk k
 
-" `<leader> + d(eclaration)` - Navigate to the declaration of a symbol from any symbol usage
-" `<leader> + i(mplementation)` - Navigate to an actual implementations of types and members to locate the source code they execute
-" `<leader> + u(sage)` - Display all usages of one or more symbols in the solution and referenced assemblies
+" `<leader> + d(eclaration)` - Navigate to a declaration of a symbol﻿
+" `<leader> + i(mplementation)` - Navigate to implementation of a type or a type member
+" `<leader> + u(sage)` - Find usages of any symbol from the solution and referenced assemblies﻿
 noremap <leader>d :vsc ReSharper.ReSharper_GotoDeclaration<CR>
 noremap <leader>i :vsc ReSharper.ReSharper_GotoImplementations<CR>
 noremap <leader>u :vsc ReSharper.ReSharper_FindUsages<CR>
@@ -116,9 +106,9 @@ noremap <leader>u :vsc ReSharper.ReSharper_FindUsages<CR>
 " noremap <leader>i :vsc Edit.GoToImplementation<CR>
 " noremap <leader>u :vsc Edit.FindAllReferences<CR>
 
-" `<leader> + f(ind) + f(iles)` - Find and navigate to the generic type declaration as well as to declarations of all generic parameters 
-" `<leader> + f(ind) + m(ember)` - Find and navigate to a particular method, field, property in the current document
-" `<leader> + f(ind) + w(ord)` - Find and navigate to any textual matches in your solution
+" `<leader> + f(ind) + f(iles)` - Search project items or locate a type﻿
+" `<leader> + f(ind) + m(ember)` - Navigate to a file member or a textual occurrence
+" `<leader> + f(ind) + w(ord)` - Navigate to a text occurrence in code and textual files﻿
 noremap <leader>ff :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <leader>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
 noremap <leader>fw :vsc ReSharper.ReSharper_GotoText<CR>
@@ -139,10 +129,10 @@ noremap <leader>E :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
 " `<leader> + t(est) + a(ll)` - Run all the tests in the solution
 " `<leader> + t(est) + l(ast)` - Repeat a previous test run
 " `<leader> + t(est) + f(ailed)` - Run only previously failed tests
-" `<leader> + t(est) + c(over) + a(ll)` - Run code coverage analysis of the solution
-" `<leader> + t(est) + d(ebug)` - Start debugging selected test
-" `<leader> + t(set) + s(how) + s(essions)` - Show unit test sessions window
-" `<leader> + t(set) + s(how) + c(overage)` - Show unit tests coverage results browser
+" `<leader> + t(est) + c(over) + a(ll)` - Cover all tests in the solution
+" `<leader> + t(est) + d(ebug)` - Start debugging the selected test
+" `<leader> + t(set) + s(how) + s(essions)` - Show the unit test sessions window
+" `<leader> + t(set) + s(how) + c(overage)` - Show the unit tests coverage results browser
 noremap <leader>tr :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
 noremap <leader>ta :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
 noremap <leader>tl :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
@@ -160,24 +150,24 @@ noremap <leader>tsc :vsc ReSharper.ReSharper_ShowCoverageResultsBrowser<CR>
 " noremap <leader>tss :vsc TestExplorer.ShowTestExplorer<CR>
 " noremap <leader>tsc :vsc View.CodeCoverageResults<CR>
 
-" `<leader> + b + b(reakpoint)` - Toggle breakpoint 
+" `<leader> + b + b(reakpoint)` - Toggle a breakpoint at the current line
 " `<leader> + b(reakpoints) + d(isable)` - Disable all breakpoins
 " `<leader> + b(reakpoints) + e(nable)` - Enable all breakpoints
 " `<leader> + b(reakpoints) + r(emove)` - Remove all breakpoints
-" `<leader> + b(reakpoints) + a(ll)` - Show breakpoints list
+" `<leader> + b(reakpoints) + a(ll)` - Show the breakpoints list
 noremap <leader>bb :vsc Debug.ToggleBreakpoint<CR>
 noremap <leader>bd :vsc Debug.DisableAllBreakpoints<CR>
 noremap <leader>be :vsc Debug.EnableAllBreakpoints<CR>
 noremap <leader>br :vsc Debug.DeleteAllBreakpoints<CR>
 noremap <leader>ba :vsc Debug.Breakpoints<CR>
 
-" `<leader> + s(tart) + b(uild)` - Build solution
-" `<leader> + s(tart) + c(lean)` - Clean solution
+" `<leader> + s(tart) + b(uild)` - Build the solution
+" `<leader> + s(tart) + c(lean)` - Clean the solution
 " `<leader> + s(tart) + b(uild)` + s(election) - Build the project that is currently selected
 " `<leader> + s(tart) + c(lean)` + s(election) - Clean the project that is currently selected
 " `<leader> + s(tart) + d(ebug)` - Start with debugging
-" `<leader> + s(tart) + r(un)` - Run a program without debugging
-" `<leader> + s(tarted) + b(uild) + c(ancel)` - Cancel building process
+" `<leader> + s(tart) + r(un)` - Run without debugging
+" `<leader> + s(tarted) + b(uild) + c(ancel)` - Cancel the build
 " `<leader> + s(tarted) + d(ebug) + c(ancel)` - Stop debugging
 noremap <leader>sb :vsc Build.BuildSolution<CR>
 noremap <leader>sc :vsc Build.CleanSolution<CR>
@@ -188,8 +178,8 @@ noremap <leader>sr :vsc Debug.StartWithoutDebugging<CR>
 noremap <leader>sbc :vsc Build.Cancel<CR>
 noremap <leader>sdc :vsc Debug.StopDebugging<CR>
 
-" `<leader> + q(ick) + w(atch)` - Show QuickWatch dialog box
-" `<Ctrl> + <Left>` - Move execution pointer to selected statement
+" `<leader> + q(ick) + w(atch)` - Show the QuickWatch dialog box
+" `<Ctrl> + <Left>` - Move execution pointer to the selected statement
 " `<Ctrl> + <Right>` - Step over
 " `<Ctrl> + <Down>` - Step into
 " `<Ctrl> + <Up>` - Step out
