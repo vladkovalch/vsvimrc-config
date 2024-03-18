@@ -70,10 +70,8 @@ noremap <C-Space> :vsc Edit.CompleteWord<CR>
 " `<leader> + r(emove) + s(ort)` - Remove and sort 'usings'
 noremap <leader>rs :vsc Edit.RemoveAndSort<CR>
 
-" `<leader> + (quic)k + i(nfo)` - Show quick info tooltip
-" `<leader> + (quic)k + p(arameter)` - Show parameter info tooltip
-noremap <leader>ki :vsc Edit.QuickInfo<CR>
-noremap <leader>kp :vsc Edit.ParameterInfo<CR>
+" `K` - Show quick information and/or parameter details tooltip
+nnoremap K :vsc Edit.QuickInfo<CR>:vsc Edit.ParameterInfo<CR>:execute "normal! K"<CR>
 
 " `]` - Navigate to the next member / type / tag
 " `[` - Navigate to the previous member / type / tag
