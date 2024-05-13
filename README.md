@@ -42,14 +42,10 @@ noremap <leader>nr :set rnu<CR>
 noremap <leader>wp :vsc Window.PinTab<CR>
 noremap <leader>wca :vsc Window.CloseAllButPinned<CR>
 
-" `-` - Collapse the current region
-" `=` - Expand the current region
-" `_` - Collapse all
-" `+` - Expand all
-noremap - :vsc Edit.CollapseCurrentRegion<CR>
-noremap = :vsc Edit.ExpandCurrentRegion<CR>
-noremap _ :vsc Edit.CollapsetoDefinitions<CR>
-noremap + :vsc Edit.ExpandAllOutlining<CR>
+" `=` - Reformat code in the selected scope
+noremap = :vsc ReSharper.ReSharper_ReformatCode<CR>
+" ReSharper disabled:
+" noremap = :vsc Edit.FormatSelection<CR>
 
 " `<Alt> + j` - Navigate to the next tab
 " `<Alt> + k` - Navigate to the previous tab
